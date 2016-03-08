@@ -53,7 +53,7 @@ class NetworkInfo {
                 var sockn = UnsafePointer<sockaddr_in>(ifa.ifa_netmask).memory.sin_addr
                 
                 var addrstr = [CChar](count: Int(len), repeatedValue: 0)
-                inet_ntop(type, &socka, &addrstr, socklen_t(len));
+                inet_ntop(type, &socka, &addrstr, socklen_t(len))
                 guard let IP = String.fromCString(addrstr) else { return nil }
                 
                 var netmaskstr = [CChar](count: Int(len), repeatedValue: 0)
@@ -72,7 +72,7 @@ class NetworkInfo {
                 var sockn = UnsafePointer<sockaddr_in6>(ifa.ifa_netmask).memory.sin6_addr
                 
                 var addrstr = [CChar](count: Int(len), repeatedValue: 0)
-                inet_ntop(type, &socka, &addrstr, socklen_t(len));
+                inet_ntop(type, &socka, &addrstr, socklen_t(len))
                 guard let IP = String.fromCString(addrstr) else { return nil }
                 
                 var netmaskstr = [CChar](count: Int(len), repeatedValue: 0)
