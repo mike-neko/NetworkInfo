@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    private var IPList: [NetworkInfo.IPAddress] = []
+    private var list = [InterfaceAddress]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,34 +24,33 @@ class ViewController: UITableViewController {
     }
 
     private func update() {
-        IPList = NetworkInfo.IPAddressList() ?? []
+        list = InterfaceAddress.list() ?? []
         tableView.reloadData()
     }
 
     // MARK: - Table view data source
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return IPList.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
     }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath)
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         
         // Configure the cell...
-        let inf = IPList[indexPath.row]
-        cell.detailTextLabel?.text = inf.device
-        cell.textLabel?.text = ((inf.version == NetworkInfo.Version.IPv6) ? "IPv6" : "IPv4") + " : " + inf.IP
+        let address = list[indexPath.row]
+        cell.detailTextLabel?.text = address.name
+        cell.textLabel?.text = "\(address.version.toString()) : \(address.IP)"
         
-        if let _ = NetworkInfo.Device(rawValue: inf.device) {
-            cell.backgroundColor = UIColor.lightGrayColor()
+        if let _ = InterfaceAddress.Network(rawValue: address.name) {
+            cell.backgroundColor = UIColor.white
         } else {
-            cell.backgroundColor = UIColor.whiteColor()
+            cell.backgroundColor = UIColor.lightGray
         }
-        
         
         return cell
     }

@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E9657FE1E07F28D0070D5FF /* InterfaceAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9657FD1E07F28D0070D5FF /* InterfaceAddress.swift */; };
 		0EB1039E1C8DA344001C5FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1039D1C8DA344001C5FE7 /* AppDelegate.swift */; };
 		0EB103A01C8DA344001C5FE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB1039F1C8DA344001C5FE7 /* ViewController.swift */; };
 		0EB103A31C8DA344001C5FE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB103A11C8DA344001C5FE7 /* Main.storyboard */; };
 		0EB103A51C8DA344001C5FE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB103A41C8DA344001C5FE7 /* Assets.xcassets */; };
 		0EB103A81C8DA344001C5FE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB103A61C8DA344001C5FE7 /* LaunchScreen.storyboard */; };
-		0EB103B01C8DA355001C5FE7 /* NetworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB103AF1C8DA355001C5FE7 /* NetworkInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E9657FD1E07F28D0070D5FF /* InterfaceAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceAddress.swift; sourceTree = "<group>"; };
 		0EB1039A1C8DA344001C5FE7 /* NetworkInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB1039D1C8DA344001C5FE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB1039F1C8DA344001C5FE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,7 +24,6 @@
 		0EB103A41C8DA344001C5FE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB103A71C8DA344001C5FE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB103A91C8DA344001C5FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EB103AF1C8DA355001C5FE7 /* NetworkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInfo.swift; sourceTree = "<group>"; };
 		0EB103B11C8DA391001C5FE7 /* NetworkInfo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetworkInfo-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,7 @@
 				0EB1039D1C8DA344001C5FE7 /* AppDelegate.swift */,
 				0EB1039F1C8DA344001C5FE7 /* ViewController.swift */,
 				0EB103B11C8DA391001C5FE7 /* NetworkInfo-Bridging-Header.h */,
-				0EB103AF1C8DA355001C5FE7 /* NetworkInfo.swift */,
+				0E9657FD1E07F28D0070D5FF /* InterfaceAddress.swift */,
 				0EB103A11C8DA344001C5FE7 /* Main.storyboard */,
 				0EB103A41C8DA344001C5FE7 /* Assets.xcassets */,
 				0EB103A61C8DA344001C5FE7 /* LaunchScreen.storyboard */,
@@ -101,6 +101,7 @@
 				TargetAttributes = {
 					0EB103991C8DA344001C5FE7 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -140,8 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9657FE1E07F28D0070D5FF /* InterfaceAddress.swift in Sources */,
 				0EB103A01C8DA344001C5FE7 /* ViewController.swift in Sources */,
-				0EB103B01C8DA355001C5FE7 /* NetworkInfo.swift in Sources */,
 				0EB1039E1C8DA344001C5FE7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +261,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NetworkInfo/NetworkInfo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -273,6 +275,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikeneko-app.NetworkInfo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NetworkInfo/NetworkInfo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -295,6 +298,7 @@
 				0EB103AE1C8DA344001C5FE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
