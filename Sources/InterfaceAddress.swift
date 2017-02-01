@@ -7,28 +7,29 @@
 //
 
 import Foundation
+import libc
 
 //- Requires: #include <ifaddrs.h> <sys/socket.h> <netinet/in.h>
 
-class InterfaceAddress {
-    enum Network: String {
+public class InterfaceAddress {
+    public enum Network: String {
         case localWiFi = "en0"
         case wan = "pdp_ip0"
     }
     
-    enum Version: String {
+    public enum Version: String {
         case IPv4
         case IPv6
         
-        func toString() -> String {
+        public func toString() -> String {
             return self.rawValue
         }
     }
     
-    let name: String
-    let version: Version
-    let IP: String
-    let mask: String
+    public let name: String
+    public let version: Version
+    public let IP: String
+    public let mask: String
     
     private init(name: String, version: Version, IP: String, mask: String) {
         self.name = name
@@ -37,7 +38,7 @@ class InterfaceAddress {
         self.mask = mask
     }
     
-    static func list() -> [InterfaceAddress]? {
+    public static func list() -> [InterfaceAddress]? {
         var results = [InterfaceAddress]()
         var ifaList: UnsafeMutablePointer<ifaddrs>? = nil
         
@@ -134,7 +135,7 @@ class InterfaceAddress {
         }
     }
     
-    static func address(network: Network, version: Version) -> InterfaceAddress? {
+    public static func address(network: Network, version: Version) -> InterfaceAddress? {
         return list()?.filter { $0.name == network.rawValue && $0.version == version }.first
     }
 }
