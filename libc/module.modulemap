@@ -1,0 +1,4 @@
+module libc [system] {
+    header "include.h"
+    export *
+}
